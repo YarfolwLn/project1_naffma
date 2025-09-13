@@ -23,7 +23,7 @@ fun main() {
             }
 
             // Попытка создать нечетное число
-            val result = createOddNumber(cifra1, cifra2)
+            val result = crnum(cifra1, cifra2)
 
             if (result != null) {
                 println("Создано нечетное число: $result")
@@ -44,7 +44,7 @@ fun main() {
     }
 }
 
-fun createOddNumber(cifra1: Int, cifra2: Int): Int? {
+fun crnum(cifra1: Int, cifra2: Int): Int? {
     // Проверяем все возможные комбинации
     val number1 = cifra1 * 10 + cifra2
     val number2 = cifra2 * 10 + cifra1
