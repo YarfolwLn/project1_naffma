@@ -1,18 +1,20 @@
 fun main() {
     println("Введите строку для анализа:")
     val input = readln()
-
-    val charCount = mutableMapOf<Char, Int>()
-
-    for (char in input) {
-        charCount[char] = charCount.getOrDefault(char, 0) + 1
-    }
-
-    val sortedChars = charCount.toList()
-        .sortedBy { it.first }
-
     println("\nРезультат:")
-    for ((char, count) in sortedChars) {
-        println("$char - $count")
+
+    for (c in 0..255) {
+        val s = c.toChar()
+        var count = 0
+
+        for (inputC in input) {
+            if (inputC == s) {
+                count++
+            }
+        }
+
+        if (count > 0) {
+            println("$s - $count")
+        }
     }
 }
