@@ -23,15 +23,13 @@ fun main() {
             println("Ошибка: ${e.message}")
         }
 
-        println() // Пустая строка для читаемости
+        println()
     }
 }
 
 fun calculatio(input: String): Double {
-    // Разделяем ввод по пробелам
     val parts = input.split(" ")
 
-    // Проверяем количество частей
     if (parts.size != 3) {
         throw IllegalArgumentException("Неверный формат ввода. Используйте: ЧИСЛО1 ЧИСЛО2 ОПЕРАЦИЯ")
     }
@@ -44,7 +42,6 @@ fun calculatio(input: String): Double {
 
     val operation = parts[2]
 
-    // Выполняем операцию
     return when (operation) {
         "+" -> number1 + number2
         "-" -> number1 - number2

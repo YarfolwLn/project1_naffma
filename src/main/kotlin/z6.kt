@@ -11,7 +11,6 @@ fun main() {
             print("Вторая цифра: ")
             val cifra2 = readln().toInt()
 
-            // Проверка валидности цифр
             if (cifra1 !in 0..9 || cifra2 !in 0..9) {
                 println("Ошибка: введите цифры от 0 до 9!")
                 continue
@@ -22,7 +21,6 @@ fun main() {
                 continue
             }
 
-            // Попытка создать нечетное число
             val result = crnum(cifra1, cifra2)
 
             if (result != null) {
@@ -32,7 +30,7 @@ fun main() {
             }
 
             print("\nПродолжить? (напишите 'выход' для завершения программы): ")
-            val prod = readln().trim()
+            val prod = readln()
             if (prod.equals("выход", ignoreCase = true)) {
                 println("Программа завершена.")
                 break
@@ -45,11 +43,9 @@ fun main() {
 }
 
 fun crnum(cifra1: Int, cifra2: Int): Int? {
-    // Проверяем все возможные комбинации
     val number1 = cifra1 * 10 + cifra2
     val number2 = cifra2 * 10 + cifra1
 
-    // Возвращаем первую подходящую нечетную комбинацию
     return when {
         number1 % 2 != 0 -> number1
         number2 % 2 != 0 -> number2
